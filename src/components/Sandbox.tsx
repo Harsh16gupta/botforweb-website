@@ -182,11 +182,11 @@ export default function Sandbox() {
       <style dangerouslySetInnerHTML={{ __html: `
         .sandbox-panel-container {
           display: grid;
-          grid-template-columns: 360px 1fr;
-          background-color: #ffffff;
+          grid-template-columns: 340px 1fr;
+          background-color: var(--bg-secondary);
           border: 1px solid var(--border-color);
           border-radius: var(--radius-lg);
-          box-shadow: var(--shadow-lg);
+          box-shadow: var(--shadow-xl), var(--shadow-glow);
           overflow: hidden;
           height: 580px;
           font-family: var(--font-sans);
@@ -194,7 +194,7 @@ export default function Sandbox() {
 
         /* Left side - files */
         .sandbox-files-pane {
-          background-color: var(--bg-secondary);
+          background-color: var(--bg-tertiary);
           border-right: 1px solid var(--border-color);
           display: flex;
           flex-direction: column;
@@ -204,7 +204,7 @@ export default function Sandbox() {
         .pane-title-area {
           padding: 1.5rem;
           border-bottom: 1px solid var(--border-color);
-          background-color: #ffffff;
+          background-color: var(--bg-secondary);
         }
 
         .pane-title-area h3 {
@@ -212,6 +212,7 @@ export default function Sandbox() {
           font-weight: 700;
           color: var(--text-primary);
           margin-bottom: 0.25rem;
+          letter-spacing: -0.02em;
         }
 
         .pane-title-area p {
@@ -230,7 +231,7 @@ export default function Sandbox() {
         }
 
         .sandbox-file-item {
-          background-color: #ffffff;
+          background-color: var(--surface-card);
           border: 1px solid var(--border-color);
           border-radius: var(--radius-md);
           padding: 0.875rem;
@@ -241,12 +242,13 @@ export default function Sandbox() {
 
         .sandbox-file-item:hover {
           border-color: var(--border-hover);
+          background-color: var(--surface-card-hover);
           transform: translateY(-1px);
         }
 
         .sandbox-file-item.selected {
           border-color: var(--accent);
-          box-shadow: 0 0 0 1px var(--accent);
+          box-shadow: 0 0 0 1px var(--accent-border);
           background-color: var(--accent-soft);
         }
 
@@ -275,15 +277,16 @@ export default function Sandbox() {
         .file-badge-type {
           font-size: 0.7rem;
           padding: 0.125rem 0.375rem;
-          background-color: var(--bg-tertiary);
+          background-color: rgba(255, 255, 255, 0.05);
           color: var(--text-secondary);
           border-radius: var(--radius-sm);
+          font-weight: 500;
         }
 
         .file-desc-text {
           font-size: 0.775rem;
           color: var(--text-secondary);
-          line-height: 1.4;
+          line-height: 1.45;
           margin-bottom: 0.5rem;
         }
 
@@ -298,7 +301,7 @@ export default function Sandbox() {
         .sandbox-chat-pane {
           display: flex;
           flex-direction: column;
-          background-color: #ffffff;
+          background-color: var(--bg-secondary);
           overflow: hidden;
         }
 
@@ -308,6 +311,7 @@ export default function Sandbox() {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          background-color: var(--bg-secondary);
         }
 
         .chat-logo-group {
@@ -327,7 +331,7 @@ export default function Sandbox() {
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: var(--shadow-sm);
+          box-shadow: var(--shadow-accent);
         }
 
         .chat-title-group h4 {
@@ -350,6 +354,7 @@ export default function Sandbox() {
           height: 6px;
           background-color: var(--success);
           border-radius: var(--radius-full);
+          animation: dot-pulse 2s infinite;
         }
 
         .sandbox-chat-history {
@@ -359,7 +364,8 @@ export default function Sandbox() {
           display: flex;
           flex-direction: column;
           gap: 1.25rem;
-          background-color: var(--bg-secondary);
+          background-color: var(--bg-primary);
+          position: relative;
         }
 
         .chat-msg-row {
@@ -389,11 +395,11 @@ export default function Sandbox() {
           background-color: var(--accent);
           color: #ffffff;
           border-bottom-right-radius: 2px;
-          box-shadow: 0 4px 10px rgba(79, 70, 229, 0.15);
+          box-shadow: var(--shadow-accent-strong);
         }
 
         .chat-msg-row.bot .chat-bubble-content {
-          background-color: #ffffff;
+          background-color: var(--surface-card);
           color: var(--text-primary);
           border: 1px solid var(--border-color);
           border-bottom-left-radius: 2px;
@@ -401,16 +407,16 @@ export default function Sandbox() {
         }
 
         .chat-msg-row.bot code {
-          background-color: var(--bg-secondary);
+          background-color: var(--bg-tertiary);
           padding: 0.2rem 0.4rem;
           border-radius: 4px;
           font-family: var(--font-mono);
           font-size: 0.775rem;
-          color: #d63384;
+          color: #f472b6; /* Soft pink for key terms */
         }
 
         .chat-msg-row.bot pre {
-          background-color: var(--bg-secondary);
+          background-color: var(--bg-tertiary);
           border: 1px solid var(--border-color);
           border-radius: var(--radius-sm);
           padding: 0.75rem;
@@ -427,7 +433,7 @@ export default function Sandbox() {
         .citation-box {
           margin-top: 0.5rem;
           padding: 0.5rem 0.75rem;
-          border: 1px solid rgba(79, 70, 229, 0.15);
+          border: 1px solid var(--accent-border);
           background-color: var(--accent-soft);
           border-radius: var(--radius-sm);
           font-size: 0.75rem;
@@ -438,9 +444,9 @@ export default function Sandbox() {
         }
 
         .citation-box.fallback {
-          border-color: #f87171;
-          background-color: #fef2f2;
-          color: #ef4444;
+          border-color: rgba(239, 68, 68, 0.2);
+          background-color: rgba(239, 68, 68, 0.06);
+          color: var(--error);
         }
 
         .citation-box svg {
@@ -458,7 +464,7 @@ export default function Sandbox() {
         .typing-dot {
           width: 6px;
           height: 6px;
-          background-color: var(--text-light);
+          background-color: var(--text-muted);
           border-radius: var(--radius-full);
           animation: dotBounce 1.4s infinite ease-in-out both;
         }
@@ -471,18 +477,23 @@ export default function Sandbox() {
           40% { transform: scale(1); }
         }
 
+        @keyframes dot-pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+
         /* Suggestions row */
         .chat-suggestions-area {
           padding: 0.75rem 1.5rem;
           border-top: 1px solid var(--border-color);
-          background-color: #ffffff;
+          background-color: var(--bg-secondary);
           display: flex;
           flex-wrap: wrap;
           gap: 0.5rem;
         }
 
         .suggestion-chip {
-          background-color: var(--bg-secondary);
+          background-color: var(--surface-card);
           border: 1px solid var(--border-color);
           border-radius: var(--radius-full);
           padding: 0.4rem 0.85rem;
@@ -497,7 +508,7 @@ export default function Sandbox() {
 
         .suggestion-chip:hover {
           border-color: var(--accent);
-          color: var(--accent);
+          color: var(--text-primary);
           background-color: var(--accent-soft);
           transform: translateY(-0.5px);
         }
@@ -506,14 +517,16 @@ export default function Sandbox() {
         .chat-input-form {
           padding: 1rem 1.5rem;
           border-top: 1px solid var(--border-color);
-          background-color: #ffffff;
+          background-color: var(--bg-secondary);
           display: flex;
           gap: 0.75rem;
         }
 
         .chat-text-input {
           flex-grow: 1;
+          background-color: var(--bg-primary);
           border: 1px solid var(--border-color);
+          color: var(--text-primary);
           border-radius: var(--radius-md);
           padding: 0.75rem 1rem;
           font-size: 0.85rem;
@@ -523,7 +536,7 @@ export default function Sandbox() {
 
         .chat-text-input:focus {
           border-color: var(--accent);
-          box-shadow: 0 0 0 2px var(--accent-light);
+          box-shadow: 0 0 0 2px var(--accent-glow);
         }
 
         .chat-send-btn {
@@ -545,7 +558,8 @@ export default function Sandbox() {
         }
 
         .chat-send-btn:disabled {
-          background-color: var(--border-color);
+          background-color: var(--surface-card);
+          color: var(--text-muted);
           cursor: not-allowed;
         }
 

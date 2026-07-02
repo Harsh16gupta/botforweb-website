@@ -20,6 +20,14 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
+    <!-- Prevent flash on light mode -->
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
@@ -39,12 +47,17 @@ const {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/og-image.png" />
+
+    <!-- Inline critical light-mode style to prevent flash -->
+    <style>
+      html, body { background-color: #ffffff; }
+    </style>
   </head>
   <body>
     <div class="bg-grid-overlay"></div>
     <slot />
 
-    <!-- Pure CSS/JS Scroll Animations Script -->
+    <!-- Scroll-triggered entrance animations -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const animatedElements = document.querySelectorAll('.fade-up-init');
@@ -53,13 +66,13 @@ const {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add('fade-up-active');
-              // Once anim plays, we stop observing it
+              // Once animation plays, stop observing
               observer.unobserve(entry.target);
             }
           });
         }, {
           threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px' // triggers slightly before scrolling fully in
+          rootMargin: '0px 0px -40px 0px'
         });
 
         animatedElements.forEach(el => observer.observe(el));

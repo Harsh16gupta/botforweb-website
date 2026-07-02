@@ -15,8 +15,8 @@
     <!-- Grid -->
     <div class="grid-3 workflow-grid">
       <!-- Step 1 -->
-      <div class="card workflow-card fade-up-init delay-100" id="step1Card">
-        <div class="step-num-badge">01</div>
+      <div class="workflow-card fade-up-init delay-100" id="step1Card">
+        <div class="step-watermark">01</div>
         <div class="workflow-icon-wrapper">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -26,19 +26,27 @@
         </div>
         <h3>Upload Docs</h3>
         <p>Drag & drop PDFs or Markdown. Celery parses and indexes your files asynchronously, extracting headers and key segments.</p>
-        
-        <!-- Interactive Visual: Upload representation -->
+
+        <!-- Visual Demo -->
         <div class="workflow-visual">
-          <div class="visual-box upload-visual-container">
+          <div class="visual-box upload-visual">
             <div class="file-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6"/>
+              </svg>
               <span>manual.pdf</span>
             </div>
-            <svg class="arrow-down-animate" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-light)" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+            <svg class="flow-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
             </svg>
             <div class="db-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+              </svg>
               <span>Ingested</span>
             </div>
           </div>
@@ -46,8 +54,8 @@
       </div>
 
       <!-- Step 2 -->
-      <div class="card workflow-card fade-up-init delay-200" id="step2Card">
-        <div class="step-num-badge">02</div>
+      <div class="workflow-card fade-up-init delay-200" id="step2Card">
+        <div class="step-watermark">02</div>
         <div class="workflow-icon-wrapper">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="12 2 2 7 12 12 22 7 12 2Z"/>
@@ -57,20 +65,23 @@
         </div>
         <h3>Auto-Vectorization</h3>
         <p>The engine splits text into semantic chunks, generates dense/sparse embeddings, and stores them in isolated database namespaces.</p>
-        
-        <!-- Interactive Visual: Embedding representation -->
+
+        <!-- Visual Demo -->
         <div class="workflow-visual">
-          <div class="visual-box vector-visual-container">
+          <div class="visual-box vector-visual">
             <span class="chunk-label">"auth key"</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg class="flow-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
             <span class="vector-pill">[0.42, -0.89, ...]</span>
           </div>
         </div>
       </div>
 
       <!-- Step 3 -->
-      <div class="card workflow-card fade-up-init delay-300" id="step3Card">
-        <div class="step-num-badge">03</div>
+      <div class="workflow-card fade-up-init delay-300" id="step3Card">
+        <div class="step-watermark">03</div>
         <div class="workflow-icon-wrapper">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="16 18 22 12 16 6"/>
@@ -79,10 +90,10 @@
         </div>
         <h3>Embed Widget</h3>
         <p>Copy the single-line JS script tag and paste it onto your site. The chatbot is instantly live, customized to your styling.</p>
-        
-        <!-- Interactive Visual: Script tag preview -->
+
+        <!-- Visual Demo -->
         <div class="workflow-visual">
-          <div class="visual-box code-visual-container">
+          <div class="visual-box code-visual">
             <code>&lt;script src="widget.js"&gt;&lt;/script&gt;</code>
           </div>
         </div>
@@ -92,192 +103,235 @@
 </section>
 
 <style>
+  /* ─── Section ─── */
   .workflow-section {
     position: relative;
-    padding: 7.5rem 0;
+    padding: 8rem 0;
     background-color: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
   }
 
-  .section-header {
-    max-width: 650px;
-    margin: 0 auto 4.5rem auto;
-    text-align: center;
-  }
-
-  .section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-top: 1.25rem;
-    margin-bottom: 1rem;
-    letter-spacing: -0.025em;
-  }
-
-  .section-desc {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
+  /* ─── Grid ─── */
   .workflow-grid {
-    margin-top: 2rem;
+    margin-top: 0;
   }
 
+  /* ─── Card ─── */
   .workflow-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
+    background: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem 2rem;
     overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all var(--transition-normal);
   }
 
   .workflow-card:hover {
+    border-color: var(--border-hover);
     transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--border-hover);
   }
 
-  .step-num-badge {
+  .workflow-card::after {
+    content: '';
     position: absolute;
-    top: 1.5rem;
-    right: 2.25rem;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
+      var(--accent-glow),
+      transparent 40%
+    );
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .workflow-card:hover::after {
+    opacity: 1;
+  }
+
+  /* ─── Step Watermark ─── */
+  .step-watermark {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
     font-family: var(--font-title);
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    color: var(--bg-tertiary);
+    color: rgba(9, 9, 11, 0.03);
     line-height: 1;
     user-select: none;
-    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
   }
 
+  /* ─── Icon Wrapper ─── */
   .workflow-icon-wrapper {
+    position: relative;
+    z-index: 1;
     width: 48px;
     height: 48px;
     border-radius: var(--radius-md);
-    background-color: var(--accent-soft);
-    border: 1px solid var(--accent-light);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
 
+  /* ─── Text Content ─── */
   .workflow-card h3 {
+    position: relative;
+    z-index: 1;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0;
+    color: var(--text-primary);
   }
 
   .workflow-card p {
+    position: relative;
+    z-index: 1;
     font-size: 0.875rem;
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    margin-bottom: 0;
     flex-grow: 1;
   }
 
-  /* Visual demonstrations in card feet */
+  /* ─── Visual Demo Area ─── */
   .workflow-visual {
+    position: relative;
+    z-index: 1;
     margin-top: auto;
     padding-top: 1.25rem;
     border-top: 1px solid var(--border-color);
   }
 
   .visual-box {
-    height: 64px;
-    background-color: var(--bg-secondary);
+    height: 56px;
+    background: rgba(9, 9, 11, 0.02);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-sans);
     padding: 0 1rem;
+    gap: 0.625rem;
+    font-family: var(--font-sans);
   }
 
-  /* Step 1 Visual */
-  .upload-visual-container {
+  /* ─── Step 1 — Upload Visual ─── */
+  .upload-visual {
     gap: 0.5rem;
   }
 
-  .file-pill, .db-pill {
-    display: flex;
+  .file-pill,
+  .db-pill {
+    display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.3rem;
     font-size: 0.65rem;
-    padding: 0.25rem 0.5rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
     border-radius: var(--radius-sm);
-    border: 1px solid var(--border-color);
-    background-color: #ffffff;
-    font-weight: 500;
+    white-space: nowrap;
   }
 
   .file-pill {
     color: var(--accent);
-    border-color: var(--accent-light);
+    border: 1px solid var(--accent-border);
+    background: var(--accent-soft);
   }
 
   .db-pill {
     color: var(--success);
-    border-color: var(--success-light);
-    background-color: var(--success-soft);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    background: var(--success-soft);
   }
 
-  .arrow-down-animate {
-    animation: bounceDown 2s infinite ease-in-out;
+  .flow-arrow {
+    flex-shrink: 0;
+    animation: bounceArrow 2s infinite ease-in-out;
   }
 
-  @keyframes bounceDown {
+  @keyframes bounceArrow {
     0%, 100% {
-      transform: translateY(0);
+      transform: translateX(0);
     }
     50% {
-      transform: translateY(3px);
+      transform: translateX(3px);
     }
   }
 
-  /* Step 2 Visual */
-  .vector-visual-container {
+  /* ─── Step 2 — Vector Visual ─── */
+  .vector-visual {
     gap: 0.5rem;
-    font-size: 0.65rem;
   }
 
   .chunk-label {
     font-family: var(--font-mono);
-    color: var(--text-secondary);
+    font-size: 0.7rem;
     font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
   }
 
   .vector-pill {
     font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
     color: var(--accent);
-    background-color: #ffffff;
-    border: 1px solid var(--accent-light);
-    padding: 0.25rem 0.5rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    padding: 0.25rem 0.6rem;
     border-radius: var(--radius-sm);
-    font-weight: 500;
+    white-space: nowrap;
   }
 
-  /* Step 3 Visual */
-  .code-visual-container {
-    background-color: var(--text-primary);
-    border: none;
-    color: var(--success);
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
+  /* ─── Step 3 — Code Visual ─── */
+  .code-visual {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
     overflow-x: hidden;
   }
 
-  .code-visual-container code {
+  .code-visual code {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--accent-dark);
     white-space: nowrap;
-    opacity: 0.95;
+    opacity: 0.9;
+    letter-spacing: -0.01em;
   }
 
+  /* ─── Responsive ─── */
   @media (max-width: 768px) {
-    .section-header h2 {
-      font-size: 2rem;
+    .workflow-section {
+      padding: 5rem 0;
     }
-    
-    .step-num-badge {
-      font-size: 2.25rem;
+
+    .workflow-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .step-watermark {
+      font-size: 2.5rem;
+    }
+
+    .workflow-card {
+      padding: 2rem 1.5rem;
     }
   }
 </style>
