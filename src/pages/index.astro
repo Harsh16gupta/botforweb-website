@@ -6,17 +6,61 @@ import Sandbox from '../components/Sandbox.tsx';
 import Workflow from '../components/Workflow.astro';
 import Security from '../components/Security.astro';
 import Pricing from '../components/Pricing.astro';
-import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="botforweb | Zero-Hallucination Documentation Chatbot RAG SaaS">
+<Layout title="botforweb | Secure Zero-Hallucination Documentation Chatbot RAG SaaS">
   <!-- Global Navigation Header -->
   <Navigation />
   
   <main>
     <!-- Hero Header Component -->
     <Hero />
+    
+    <!-- Social Proof Client Logo Banner -->
+    <section class="trust-banner-section fade-up-init delay-300" id="trustSection">
+      <div class="container">
+        <p class="trust-title">TRUSTED BY SECURITY-CONSCIOUS DEVELOPMENT TEAMS</p>
+        <div class="trust-logos">
+          <!-- Logo 1: Supabase Mock -->
+          <div class="trust-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 13h10v7l10-11H12V2z"/>
+            </svg>
+            <span>SUPABASE</span>
+          </div>
+          <!-- Logo 2: Vercel Mock -->
+          <div class="trust-logo">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 22h20L12 2z"/>
+            </svg>
+            <span>VERCEL</span>
+          </div>
+          <!-- Logo 3: Retool Mock -->
+          <div class="trust-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="9" y1="3" x2="9" y2="21"/>
+            </svg>
+            <span>RETOOL</span>
+          </div>
+          <!-- Logo 4: Stripe Mock -->
+          <div class="trust-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.97 4.53c0-2.31-1.12-3.53-3.41-3.53-2.3 0-3.69 1.25-3.69 3.53 0 2.66 2.05 3.32 4.19 3.86 1.83.45 2.27.87 2.27 1.63 0 .76-.62 1.14-1.57 1.14-.99 0-1.74-.35-2.29-.75l-.83 2.1c.64.47 1.93.91 3.19.91 2.5 0 3.75-1.25 3.75-3.48 0-2.61-2-3.32-4.14-3.81-1.7-.39-2.22-.85-2.22-1.55 0-.67.53-1.07 1.39-1.07 1 .01 1.65.29 2.07.57l.79-2.03z"/>
+            </svg>
+            <span>STRIPE</span>
+          </div>
+          <!-- Logo 5: Linear Mock -->
+          <div class="trust-logo">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L13 17.14v2.79z"/>
+            </svg>
+            <span>LINEAR</span>
+          </div>
+        </div>
+      </div>
+    </section>
     
     <!-- Sandbox Section (React Island) -->
     <section class="section sandbox-section-wrapper" id="sandbox-section">
@@ -44,9 +88,6 @@ import Footer from '../components/Footer.astro';
 
     <!-- Plan Pricing Cards -->
     <Pricing />
-
-    <!-- Frequently Asked Questions -->
-    <FAQ />
   </main>
 
   <!-- Global Footer -->
@@ -54,10 +95,55 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
+  /* Trust Banner Section */
+  .trust-banner-section {
+    padding: 3rem 0;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .trust-title {
+    font-size: 0.675rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.75rem;
+    text-transform: uppercase;
+  }
+
+  .trust-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5rem;
+    flex-wrap: wrap;
+    opacity: 0.5;
+    transition: opacity var(--transition-fast);
+  }
+
+  .trust-logos:hover {
+    opacity: 0.85;
+  }
+
+  .trust-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Sandbox Wrapper Section */
   .sandbox-section-wrapper {
     background-color: var(--bg-primary);
-    padding: 7rem 0;
-    border-top: 1px solid var(--border-color);
+    padding: 7.5rem 0;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .section-header {
@@ -89,10 +175,13 @@ import Footer from '../components/Footer.astro';
 
   @media (max-width: 768px) {
     .sandbox-section-wrapper {
-      padding: 5rem 0;
+      padding: 5.5rem 0;
     }
     .section-header h2 {
       font-size: 2rem;
+    }
+    .trust-logos {
+      gap: 2.5rem;
     }
   }
 </style>

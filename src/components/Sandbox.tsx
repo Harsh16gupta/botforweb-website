@@ -72,11 +72,16 @@ export default function Sandbox() {
   const [selectedFile, setSelectedFile] = useState<FileItem | null>(mockFiles[0]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatHistoryRef = useRef<HTMLDivElement>(null);
 
-  // Auto scroll to bottom
+  // Auto scroll to bottom inside the chat container (prevents window jumping)
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (chatHistoryRef.current) {
+      chatHistoryRef.current.scrollTo({
+        top: chatHistoryRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
   }, [messages, isTyping]);
 
   // XSS Prevention: Safe HTML Escaping
@@ -613,7 +618,7 @@ export default function Sandbox() {
         </div>
 
         {/* Chat History */}
-        <div className="sandbox-chat-history">
+        <div ref={chatHistoryRef} className="sandbox-chat-history">
           {messages.map(msg => (
             <div key={msg.id} className={`chat-msg-row ${msg.sender === 'user' ? 'user' : 'bot'}`}>
               <div className="chat-bubble-content">
@@ -653,7 +658,6 @@ export default function Sandbox() {
             </div>
           )}
 
-          <div ref={chatEndRef} />
         </div>
 
         {/* Suggestions Row */}

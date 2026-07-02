@@ -64,14 +64,17 @@
     <div class="security-visual fade-up-init delay-200">
       <div class="security-diagram-card">
         <div class="diagram-header">
-          <div class="diagram-title">Data Isolation Flow</div>
+          <div class="diagram-title-group">
+            <div class="diagram-title">Data Isolation Flow</div>
+            <div class="diagram-subtitle">AES-256 Keys Rotated • 100% Isolated</div>
+          </div>
           <span class="shield-badge">Validated</span>
         </div>
 
         <div class="diagram-body">
           <!-- Tenant Block -->
           <div class="diagram-row">
-            <div class="diagram-node node-purple" id="nodeClientQuery">
+            <div class="diagram-node node-emerald" id="nodeClientQuery">
               <span class="node-label">Client Query</span>
               <span class="node-desc">"How to auth?"</span>
             </div>
@@ -81,7 +84,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--border-dark)" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </div>
 
-            <div class="diagram-node node-blue" id="nodeAuthCheck">
+            <div class="diagram-node node-teal" id="nodeAuthCheck">
               <span class="node-label">JWT Verification</span>
               <span class="node-desc">Tenant ID Decoded</span>
             </div>
@@ -109,7 +112,7 @@
           <!-- Databases Grid -->
           <div class="diagram-db-grid">
             <!-- Namespace 1 -->
-            <div class="db-namespace border-indigo">
+            <div class="db-namespace border-teal">
               <div class="db-title-bar">
                 <span class="active-dot"></span>
                 <span>Namespace: bfw_4a1f</span>
@@ -230,12 +233,24 @@
     padding-bottom: 1rem;
   }
 
+  .diagram-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
   .diagram-title {
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+
+  .diagram-subtitle {
+    font-size: 0.675rem;
+    color: var(--text-light);
+    font-family: var(--font-mono);
   }
 
   .shield-badge {
@@ -277,14 +292,14 @@
     box-shadow: var(--shadow-sm);
   }
 
-  .node-purple {
-    border-color: #d8b4fe; /* Purple 300 */
-    background-color: #faf5ff; /* Purple 50 */
+  .node-emerald {
+    border-color: #a7f3d0; /* Emerald 200 */
+    background-color: #ecfdf5; /* Emerald 50 */
   }
 
-  .node-blue {
-    border-color: #93c5fd; /* Blue 300 */
-    background-color: #eff6ff; /* Blue 50 */
+  .node-teal {
+    border-color: #99f6e4; /* Teal 200 */
+    background-color: #f0fdfa; /* Teal 50 */
   }
 
   .node-dark {
@@ -377,9 +392,9 @@
     box-shadow: var(--shadow-sm);
   }
 
-  .border-indigo {
+  .border-teal {
     border-color: var(--accent-light);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.05);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.05);
   }
 
   .db-namespace.blocked {
