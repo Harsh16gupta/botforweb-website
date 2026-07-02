@@ -2,9 +2,6 @@
 ---
 
 <section class="cta-section" id="trial">
-  <!-- Blurred animated gradient mesh background -->
-  <div class="cta-gradient-mesh"></div>
-  
   <div class="container cta-container fade-up-init">
     <h2 class="cta-headline">Ready to deploy your zero-hallucination assistant?</h2>
     
@@ -13,8 +10,8 @@
     </p>
     
     <div class="cta-actions">
-      <a href="#pricing" class="btn btn-primary btn-cta-start" id="ctaBtnStart">Start Free Trial</a>
-      <a href="#signin" class="btn btn-secondary btn-cta-sales" id="ctaBtnSales">Talk to Sales</a>
+      <a href="https://app.botforweb.com/signup" class="btn btn-primary btn-cta-start" id="ctaBtnStart">Start Free Trial</a>
+      <a href="mailto:sales@botforweb.com" class="btn btn-secondary btn-cta-sales" id="ctaBtnSales">Talk to Sales</a>
     </div>
   </div>
 </section>
@@ -22,42 +19,11 @@
 <style>
   .cta-section {
     padding: 8rem 0;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     border-top: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
     text-align: center;
-  }
-
-  /* Animated background gradient orb mesh */
-  .cta-gradient-mesh {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(255, 87, 34, 0.07) 0%,
-      rgba(255, 87, 34, 0.02) 40%,
-      transparent 70%
-    );
-    filter: blur(60px);
-    z-index: 0;
-    pointer-events: none;
-    animation: cta-glow 10s ease-in-out infinite alternate;
-  }
-
-  @keyframes cta-glow {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.8;
-    }
-    100% {
-      transform: translate(-45%, -52%) scale(1.15);
-      opacity: 1;
-    }
   }
 
   .cta-container {
@@ -71,10 +37,10 @@
   }
 
   .cta-headline {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 1.15;
-    letter-spacing: -0.045em;
+    letter-spacing: -0.03em;
     color: var(--text-primary);
   }
 

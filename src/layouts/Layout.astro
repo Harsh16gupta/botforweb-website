@@ -20,8 +20,17 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
-    <!-- Prevent flash on light mode -->
-    <meta name="color-scheme" content="light" />
+    <!-- Inline script to prevent theme flash -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Preconnect to Google Fonts for performance -->
@@ -48,9 +57,10 @@ const {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/og-image.png" />
 
-    <!-- Inline critical light-mode style to prevent flash -->
+    <!-- Inline critical styles to prevent flash in both themes -->
     <style>
       html, body { background-color: #ffffff; }
+      html.dark, html.dark body { background-color: #09090b; }
     </style>
   </head>
   <body>
