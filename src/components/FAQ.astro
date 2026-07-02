@@ -1,0 +1,293 @@
+---
+---
+
+<section class="faq-section" id="faq">
+  <div class="container faq-container">
+    
+    <!-- Section Header -->
+    <div class="section-header fade-up-init">
+      <span class="badge">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-desc">
+        Details on our vector search pipeline, data encryption policies, and database tenant isolation.
+      </p>
+    </div>
+
+    <!-- Accordion Wrapper -->
+    <div class="faq-accordion-list fade-up-init delay-100">
+      
+      <!-- FAQ Item 1 -->
+      <div class="faq-item" id="faqItem1">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faqContent1">
+          <span>How does PostgreSQL Row-Level Security (RLS) protect my documents?</span>
+          <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-content" id="faqContent1" role="region">
+          <div class="faq-content-inner">
+            <p>
+              PostgreSQL RLS works directly at the query compiler level inside our database clusters. Every similarity search query or document lookup is dynamically parameterized with the caller's unique <code>tenant_id</code>. 
+            </p>
+            <p>
+              The database engine physically filters out all rows belonging to other tenants before executing any index scans. This means that even in the unlikely event of an application-level routing bug, tenant data can never bleed across workspaces.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item" id="faqItem2">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faqContent2">
+          <span>Can the chatbot hallucinate or fabricate information?</span>
+          <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-content" id="faqContent2" role="region">
+          <div class="faq-content-inner">
+            <p>
+              No. We enforce strict Retrieval-Augmented Generation (RAG) grounding constraints. When a user asks a question, we first fetch semantic snippets exclusively from your verified documents. 
+            </p>
+            <p>
+              The AI LLM is constrained to synthesize answers based <em>only</em> on those context chunks. Before displaying the answer, our engine runs a secondary verification check. If the generated output is not backed by the source citations, the widget displays a helpful fallback refusal rather than generating false info.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item" id="faqItem3">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faqContent3">
+          <span>What file formats can be uploaded to the knowledge base?</span>
+          <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-content" id="faqContent3" role="region">
+          <div class="faq-content-inner">
+            <p>
+              We currently support PDF manuals, Markdown (<code>.md</code> / <code>.markdown</code>), JSON files, and plaintext documents. 
+            </p>
+            <p>
+              During upload, our parsing microservice (managed with Celery and python-docx/pdfplumber) strips structural noise, splits files into logical headers/paragraphs, cleans markdown tables, and maps them to dense embeddings.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item" id="faqItem4">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faqContent4">
+          <span>Are custom domains supported for the widget API?</span>
+          <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-content" id="faqContent4" role="region">
+          <div class="faq-content-inner">
+            <p>
+              Yes. The Growth tier allows you to map widgets and dashboard endpoints to a custom subdomain of your own (e.g., <code>docs-helper.yourcompany.com</code>). 
+            </p>
+            <p>
+              We automatically issue and maintain Let's Encrypt SSL/TLS certificates for your custom subdomains, which are served through our secure global edge CDN.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="faq-item" id="faqItem5">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faqContent5">
+          <span>How is my document data encrypted?</span>
+          <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-content" id="faqContent5" role="region">
+          <div class="faq-content-inner">
+            <p>
+              All traffic between your site, your dashboard, and our databases is encrypted using TLS 1.3. 
+            </p>
+            <p>
+              Document vectors and raw parsed contents are encrypted at rest using AES-256. Database backups and read replicas maintain the same level of encryption, ensuring full regulatory security compliance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 7.5rem 0;
+    background-color: var(--bg-primary);
+  }
+
+  .faq-container {
+    max-width: 800px;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    letter-spacing: -0.025em;
+  }
+
+  .section-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Accordion Layout */
+  .faq-accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: all var(--transition-fast);
+  }
+
+  .faq-item:hover {
+    border-color: var(--border-hover);
+  }
+
+  /* Trigger Header */
+  .faq-trigger {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+    gap: 1.5rem;
+  }
+
+  .chevron-icon {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    transition: transform var(--transition-normal);
+  }
+
+  /* Active states */
+  .faq-item.active {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faq-item.active .chevron-icon {
+    transform: rotate(180deg);
+    color: var(--accent);
+  }
+
+  /* Animated collapsible container */
+  .faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-normal);
+  }
+
+  .faq-item.active .faq-content {
+    grid-template-rows: 1fr;
+  }
+
+  .faq-content-inner {
+    overflow: hidden;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .faq-content-inner p {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .faq-content-inner p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-content-inner code {
+    background-color: var(--bg-secondary);
+    padding: 0.125rem 0.375rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .faq-trigger {
+      padding: 1.25rem;
+      font-size: 0.975rem;
+    }
+
+    .faq-content-inner {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+
+      trigger?.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all other items first (accordion style)
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            otherItem.querySelector('.faq-trigger')?.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle the clicked item
+        if (isActive) {
+          item.classList.remove('active');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Sandbox from '../components/Sandbox.tsx';
+import Workflow from '../components/Workflow.astro';
+import Security from '../components/Security.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="botforweb | Zero-Hallucination Documentation Chatbot RAG SaaS">
+  <!-- Global Navigation Header -->
+  <Navigation />
+  
+  <main>
+    <!-- Hero Header Component -->
+    <Hero />
+    
+    <!-- Sandbox Section (React Island) -->
+    <section class="section sandbox-section-wrapper" id="sandbox-section">
+      <div class="container">
+        <div class="section-header fade-up-init">
+          <span class="badge">Interactive Trial</span>
+          <h2>Experience the Zero-Hallucination Engine</h2>
+          <p class="section-desc">
+            Test our chatbot in real-time. Select a source document from the knowledge base, click one of the suggested questions, or type your own to see citation-grounded RAG in action.
+          </p>
+        </div>
+        
+        <div class="sandbox-wrapper fade-up-init delay-100">
+          <!-- Hydrate React Sandbox Component Client-side -->
+          <Sandbox client:load />
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Step Setup Process -->
+    <Workflow />
+
+    <!-- Security, Isolation, Hybrid Search -->
+    <Security />
+
+    <!-- Plan Pricing Cards -->
+    <Pricing />
+
+    <!-- Frequently Asked Questions -->
+    <FAQ />
+  </main>
+
+  <!-- Global Footer -->
+  <Footer />
+</Layout>
+
+<style>
+  .sandbox-section-wrapper {
+    background-color: var(--bg-primary);
+    padding: 7rem 0;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    letter-spacing: -0.025em;
+  }
+
+  .section-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .sandbox-wrapper {
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .sandbox-section-wrapper {
+      padding: 5rem 0;
+    }
+    .section-header h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,262 @@
+---
+---
+
+<header class="navbar" id="globalNavbar">
+  <div class="nav-container container">
+    <!-- Logo -->
+    <a href="#" class="logo" id="navLogo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 17L12 22L22 17" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 12L12 17L22 12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>botforweb</span>
+    </a>
+
+    <!-- Nav Links (Center) -->
+    <nav class="nav-links" id="navLinks">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#security" class="nav-link">Security</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+    </nav>
+
+    <!-- CTAs (Right) -->
+    <div class="nav-actions" id="navActions">
+      <a href="#signin" class="btn btn-link nav-signin-btn" id="btnSignIn">Sign In</a>
+      <a href="#trial" class="btn btn-primary nav-trial-btn" id="btnStartTrial">Start Free Trial</a>
+    </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: all var(--transition-fast);
+  }
+
+  /* Scrolled active state */
+  :global(.navbar-scrolled) {
+    height: 64px !important;
+    box-shadow: var(--shadow-sm);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .logo svg {
+    transition: transform var(--transition-normal);
+  }
+
+  .logo:hover svg {
+    transform: rotate(15deg) scale(1.05);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    position: relative;
+    padding: 0.5rem 0;
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+  }
+
+  /* Thin line hover effect */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-normal);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-signin-btn {
+    font-size: 0.925rem;
+    font-weight: 500;
+  }
+
+  .nav-trial-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  /* Hamburger Menu Toggle Button */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .mobile-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 4px;
+    transition: all var(--transition-normal);
+  }
+
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* hidden on mobile initially */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      flex-direction: column;
+      padding: 1.5rem var(--container-padding);
+      gap: 1.25rem;
+      align-items: flex-start;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-actions {
+      display: none; /* hidden on mobile initially */
+      position: absolute;
+      top: calc(100% + 180px); /* Positioned below links menu */
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 0 var(--container-padding) 2rem var(--container-padding);
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: var(--shadow-md);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-actions.active {
+      display: flex;
+      top: calc(100% + 195px);
+    }
+
+    /* Keep actions joint in links menu on mobile */
+    .nav-links.active + .nav-actions.active {
+      /* Connected view */
+      margin-top: -1px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .mobile-toggle {
+      display: flex;
+    }
+
+    /* Transform hamburger into close sign when menu is open */
+    .mobile-toggle.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-toggle.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('globalNavbar');
+    const toggleBtn = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navActions = document.getElementById('navActions');
+
+    // Handle scroll shrinking navbar
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar?.classList.add('navbar-scrolled');
+      } else {
+        navbar?.classList.remove('navbar-scrolled');
+      }
+    });
+
+    // Mobile menu toggle logic
+    toggleBtn?.addEventListener('click', () => {
+      toggleBtn.classList.toggle('active');
+      navLinks?.classList.toggle('active');
+      navActions?.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggleBtn?.classList.remove('active');
+        navLinks?.classList.remove('active');
+        navActions?.classList.remove('active');
+      });
+    });
+  });
+</script>
