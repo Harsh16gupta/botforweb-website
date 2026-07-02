@@ -111,10 +111,15 @@
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
   }
-
   /* ─── Grid ─── */
   .workflow-grid {
     margin-top: 0;
+  }
+
+  @media (min-width: 769px) {
+    .workflow-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
   }
 
   /* ─── Card ─── */
