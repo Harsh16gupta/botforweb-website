@@ -399,7 +399,7 @@ export default function Sandbox() {
         }
 
         .chat-msg-row.bot .chat-bubble-content {
-          background-color: var(--surface-card);
+          background-color: var(--bg-secondary);
           color: var(--text-primary);
           border: 1px solid var(--border-color);
           border-bottom-left-radius: 2px;
@@ -412,7 +412,7 @@ export default function Sandbox() {
           border-radius: 4px;
           font-family: var(--font-mono);
           font-size: 0.775rem;
-          color: #f472b6; /* Soft pink for key terms */
+          color: var(--accent-dark); /* Rich vermillion for key terms */
         }
 
         .chat-msg-row.bot pre {
