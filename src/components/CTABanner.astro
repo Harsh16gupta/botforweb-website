@@ -219,17 +219,40 @@
       e.preventDefault();
       const emailInput = document.getElementById('interestEmail') as HTMLInputElement | null;
       if (emailInput && messageDiv && submitBtn) {
+        const email = emailInput.value;
         submitBtn.disabled = true;
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Submitting...';
 
-        setTimeout(() => {
-          messageDiv.textContent = 'Thank you! We have received your request and will reach out shortly.';
-          messageDiv.className = 'form-message success';
-          emailInput.value = '';
+        fetch("https://formsubmit.co/ajax/harsh016official@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            email: email,
+            _subject: "New Beta Interest Registered on Botforweb"
+          })
+        })
+        .then(response => {
+          if (response.ok) {
+            messageDiv.textContent = 'Thank you! We have received your request and will reach out shortly.';
+            messageDiv.className = 'form-message success';
+            emailInput.value = '';
+          } else {
+            messageDiv.textContent = 'Something went wrong. Please try again.';
+            messageDiv.className = 'form-message error';
+          }
+        })
+        .catch(() => {
+          messageDiv.textContent = 'Something went wrong. Please try again.';
+          messageDiv.className = 'form-message error';
+        })
+        .finally(() => {
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
-        }, 800);
+        });
       }
     });
   });
