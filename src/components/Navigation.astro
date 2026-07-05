@@ -14,7 +14,6 @@
       <a href="#features" class="nav-link">Features</a>
       <a href="#how-it-works" class="nav-link">How It Works</a>
       <a href="#security" class="nav-link">Security</a>
-      <a href="#pricing" class="nav-link">Pricing</a>
     </nav>
 
     <!-- CTAs (Right) -->
@@ -32,8 +31,7 @@
         </svg>
       </button>
 
-      <a href="https://app.botforweb.com/login" class="btn-signin" id="btnSignIn">Sign In</a>
-      <a href="https://app.botforweb.com/signup" class="btn-trial" id="btnStartTrial">Start Free Trial</a>
+      <a href="#trial" class="btn-trial" id="btnStartTrial">Start Free Trial</a>
     </div>
 
     <!-- Mobile Hamburger Toggle -->
@@ -49,7 +47,6 @@
       <a href="#features" class="mobile-link">Features</a>
       <a href="#how-it-works" class="mobile-link">How It Works</a>
       <a href="#security" class="mobile-link">Security</a>
-      <a href="#pricing" class="mobile-link">Pricing</a>
     </nav>
     <div class="mobile-panel-actions">
       <div class="mobile-theme-row">
@@ -64,8 +61,7 @@
           </svg>
         </button>
       </div>
-      <a href="https://app.botforweb.com/login" class="mobile-signin">Sign In</a>
-      <a href="https://app.botforweb.com/signup" class="mobile-cta">Start Free Trial</a>
+      <a href="#trial" class="mobile-cta">Start Free Trial</a>
     </div>
   </div>
 </header>
@@ -77,7 +73,7 @@
     top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 900px;
+    max-width: 1000px;
     width: calc(100% - 2rem);
     z-index: 1000;
     transition:
@@ -120,10 +116,10 @@
   }
 
   .logo-mark {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: var(--accent);
-    border-radius: 2px;
+    border-radius: 3px;
     display: inline-block;
     transition: transform var(--transition-normal);
   }
@@ -169,6 +165,11 @@
   }
 
   .nav-link:hover {
+    color: var(--text-primary);
+    background: var(--overlay-hover);
+  }
+
+  .nav-link.active {
     color: var(--text-primary);
     background: var(--overlay-hover);
   }
@@ -498,5 +499,26 @@
 
     themeToggleBtn?.addEventListener('click', toggleTheme);
     mobileThemeToggleBtn?.addEventListener('click', toggleTheme);
+
+    // Highlight active section in nav
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const highlightNav = () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = (section as HTMLElement).offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll', highlightNav);
+    highlightNav();
   });
 </script>

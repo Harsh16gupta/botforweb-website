@@ -2,126 +2,153 @@
 ---
 
 <section class="hero-section" id="hero">
+  <!-- Ambient Background Effects -->
+  <div class="hero-bg-effects" aria-hidden="true">
+    <div class="hero-gradient-orb hero-orb-1"></div>
+    <div class="hero-gradient-orb hero-orb-2"></div>
+    <div class="hero-gradient-orb hero-orb-3"></div>
+  </div>
+
   <div class="hero-container container">
-    <div class="hero-content">
+    <div class="hero-grid">
 
-      <!-- Badge -->
-      <div class="badge-wrapper fade-up-init stagger-1">
-        <span class="badge hero-badge">
-          <span class="badge-dot"></span>
-          ZERO-HALLUCINATION RAG ENGINE
-        </span>
+      <!-- ═══ LEFT COLUMN: Text & CTAs ═══ -->
+      <div class="hero-left">
+        <!-- Badge -->
+        <div class="badge-wrapper fade-up-init stagger-1">
+          <span class="badge hero-badge">
+            <span class="badge-dot"></span>
+            ZERO-HALLUCINATION AI
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-headline fade-up-init stagger-2" id="heroTitle">
+          Your docs, turned into a <span class="highlight-text highlight-underline">fact-checked</span> AI&nbsp;assistant.
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="hero-subheadline fade-up-init stagger-3" id="heroSub">
+          Upload PDFs and Markdown. Get a citation-grounded chatbot live on your site in under 5 minutes — with zero hallucinations guaranteed.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions fade-up-init stagger-4">
+          <a href="#trial" class="btn btn-primary hero-btn-primary btn-pulse" id="heroBtnStart">
+            Start Free Trial
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#sandbox-section" class="btn btn-secondary hero-btn-secondary" id="heroBtnSandbox">
+            See Live Demo <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <!-- Metrics Strip -->
+        <div class="hero-metrics fade-up-init stagger-5">
+          <div class="metric-item">
+            <span class="metric-value">99.9%</span>
+            <span class="metric-label">Uptime SLA</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value">&lt;300ms</span>
+            <span class="metric-label">Avg Response</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value">AES-256</span>
+            <span class="metric-label">Encryption</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Headline -->
-      <h1 class="hero-headline fade-up-init stagger-2" id="heroTitle">
-        Your documentation.<br />
-        Turned into a <span class="highlight-text">fact-checked</span> AI assistant.
-      </h1>
+      <!-- ═══ RIGHT COLUMN: Product Visual ═══ -->
+      <div class="hero-right fade-up-init stagger-3">
+        <div class="hero-visual-wrapper">
 
-      <!-- Sub-headline -->
-      <p class="hero-subheadline fade-up-init stagger-3" id="heroSub">
-        Upload product manuals, PDFs, and Markdown files. Instantly generate a public chatbot widget that answers user questions with zero hallucinations. Secured by PostgreSQL RLS and live on your site with a single script tag.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="hero-actions fade-up-init stagger-4">
-        <a href="https://app.botforweb.com/signup" class="btn btn-primary hero-btn-primary" id="heroBtnStart">Start Free Trial</a>
-        <a href="#sandbox-section" class="btn btn-secondary hero-btn-secondary" id="heroBtnSandbox">
-          Explore Interactive Sandbox <span class="arrow">→</span>
-        </a>
-      </div>
-
-      <!-- Pipeline Card -->
-      <div class="pipeline-wrapper fade-up-init stagger-5">
-        <div class="pipeline-card" id="heroVisual">
-          <!-- Terminal Top Bar -->
-          <div class="pipeline-topbar">
-            <div class="topbar-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+          <!-- Floating Code Snippet (behind, top-left) -->
+          <div class="floating-code-card" id="floatingCode">
+            <div class="floating-code-header">
+              <span class="fc-dot"></span>
+              EMBED SCRIPT
             </div>
-            <span class="pipeline-title">INGESTION PIPELINE</span>
+            <code>&lt;script src="widget.js" data-id="bfw_9273"&gt;&lt;/script&gt;</code>
           </div>
 
-          <!-- Pipeline Body -->
-          <div class="pipeline-body">
-
-            <!-- Step 1 -->
-            <div class="step-panel" id="pipelineStep1">
-              <div class="step-num">01</div>
-              <div class="step-content">
-                <div class="step-header-row">
-                  <h4>Parse & Chunk</h4>
-                  <span class="status-indicator success">Ready</span>
-                </div>
-                <p class="step-description">Celery parses headers and chunks text asynchronously.</p>
-                <div class="step-visual">
-                  <div class="visual-file-item">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                      <path d="M14 2v6h6"/>
-                    </svg>
-                    <span class="filename">user_manual.pdf</span>
-                    <span class="file-size">1.2 MB</span>
-                    <div class="file-progress-bar"><div class="fill"></div></div>
-                    <span class="percentage">100%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Connector -->
-            <div class="step-connector">
-              <div class="connector-line"></div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="step-panel" id="pipelineStep2">
-              <div class="step-num">02</div>
-              <div class="step-content">
-                <div class="step-header-row">
-                  <h4>Generate Embeddings</h4>
-                  <span class="status-indicator success">Isolated</span>
-                </div>
-                <p class="step-description">Generates dense vector indices stored under Postgres RLS namespaces.</p>
-                <div class="step-visual">
-                  <div class="db-status-pill">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                      <path d="M7 11V7a5 5 0 0110 0v4"/>
-                    </svg>
-                    <span>PostgreSQL Row-Level Isolation (RLS) Verified</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Connector -->
-            <div class="step-connector">
-              <div class="connector-line"></div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-panel" id="pipelineStep3">
-              <div class="step-num">03</div>
-              <div class="step-content">
-                <div class="step-header-row">
-                  <h4>Deploy Widget</h4>
-                  <span class="status-indicator live">Live</span>
-                </div>
-                <p class="step-description">Paste the single script tag to show the cited AI widget.</p>
-                <div class="step-visual script-visual">
-                  <div class="code-header">COPY EMBED SCRIPT</div>
-                  <div class="code-body">
-                    <code>&lt;script src="https://cdn.botforweb.com/widget.js" data-id="bfw_9273" async&gt;&lt;/script&gt;</code>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <!-- Floating RLS Badge (behind, bottom-left) -->
+          <div class="floating-rls-badge" id="floatingRLS">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
+            <span>PostgreSQL RLS Verified</span>
           </div>
+
+          <!-- Main Chat Widget Preview -->
+          <div class="chat-widget-preview" id="heroWidget">
+            <!-- Widget Header -->
+            <div class="widget-header">
+              <div class="widget-header-left">
+                <div class="widget-avatar">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <div>
+                  <div class="widget-title">Documentation Assistant</div>
+                  <div class="widget-status">
+                    <span class="widget-status-dot"></span>
+                    Online · Zero-hallucination active
+                  </div>
+                </div>
+              </div>
+              <div class="widget-header-dots">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <!-- Chat Messages (animated) -->
+            <div class="widget-chat-body" id="widgetChatBody">
+              <!-- User message -->
+              <div class="widget-msg widget-msg-user widget-msg-animate" id="heroMsg1">
+                <div class="widget-msg-bubble user-bubble">How do I authenticate API requests?</div>
+              </div>
+
+              <!-- Bot response -->
+              <div class="widget-msg widget-msg-bot widget-msg-animate" id="heroMsg2">
+                <div class="widget-msg-bubble bot-bubble">
+                  Include your API key in the <code>Authorization</code> header as a Bearer token:
+                  <div class="widget-code-block">Authorization: Bearer bfw_live_948af7...</div>
+                </div>
+                <div class="widget-citation">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  <span>Grounded: <strong>api_v1_reference.md</strong> §1.1</span>
+                </div>
+              </div>
+
+              <!-- Second user message -->
+              <div class="widget-msg widget-msg-user widget-msg-animate" id="heroMsg3">
+                <div class="widget-msg-bubble user-bubble">What about rate limiting?</div>
+              </div>
+
+              <!-- Second bot response -->
+              <div class="widget-msg widget-msg-bot widget-msg-animate" id="heroMsg4">
+                <div class="widget-msg-bubble bot-bubble">
+                  The default rate limit is <strong>100 requests/min</strong> per API key. Enterprise plans support custom limits via the dashboard.
+                </div>
+                <div class="widget-citation">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  <span>Grounded: <strong>api_v1_reference.md</strong> §2.3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widget Input Bar -->
+            <div class="widget-input-bar">
+              <span class="widget-input-placeholder">Ask about your documentation...</span>
+              <div class="widget-send-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -130,43 +157,107 @@
 </section>
 
 <style>
-  /* ─── Hero Section ─── */
+  /* ═══════════════════════════════════════════
+     HERO SECTION — SPLIT LAYOUT
+     ═══════════════════════════════════════════ */
+
   .hero-section {
     position: relative;
     padding-top: 10rem;
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
     background-color: var(--bg-primary);
     overflow: hidden;
     border-bottom: 1px solid var(--border-color);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
   }
 
-  /* ─── Content Container ─── */
+  /* ─── Background Effects ─── */
+  .hero-bg-effects {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+  }
+
+  .hero-orb-1 {
+    width: 700px;
+    height: 500px;
+    top: -20%;
+    left: 25%;
+    background: radial-gradient(ellipse at center, var(--accent-glow-strong) 0%, transparent 70%);
+    animation: orbFloat1 15s ease-in-out infinite;
+  }
+
+  .hero-orb-2 {
+    width: 500px;
+    height: 400px;
+    bottom: -10%;
+    right: 10%;
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    animation: orbFloat2 20s ease-in-out infinite;
+  }
+
+  .hero-orb-3 {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    right: 35%;
+    background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%);
+    animation: orbFloat3 12s ease-in-out infinite;
+  }
+
+  @keyframes orbFloat1 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 20px); }
+  }
+  @keyframes orbFloat2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, -15px); }
+  }
+  @keyframes orbFloat3 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(15px, -25px); }
+  }
+
+  /* ─── Main Grid ─── */
   .hero-container {
     position: relative;
     z-index: 1;
   }
 
-  .hero-content {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* ═══ LEFT COLUMN ═══ */
+  .hero-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
     gap: 1.5rem;
   }
 
-  /* ─── Badge ─── */
   .badge-wrapper {
     display: flex;
-    justify-content: center;
   }
 
   .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.45rem 1.1rem;
+    padding: 0.4rem 1rem;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -186,14 +277,12 @@
     flex-shrink: 0;
   }
 
-  /* ─── Headline ─── */
   .hero-headline {
-    font-size: 4.25rem;
+    font-size: 3.75rem;
     font-weight: 800;
     line-height: 1.08;
     color: var(--text-primary);
     letter-spacing: -0.04em;
-    text-align: center;
     margin-bottom: 0;
   }
 
@@ -201,30 +290,37 @@
     position: relative;
     display: inline-block;
     color: var(--accent);
+    -webkit-text-fill-color: var(--accent);
   }
 
-  /* ─── Sub-headline ─── */
   .hero-subheadline {
-    font-size: 1.05rem; /* Dropped subhead font size slightly */
+    font-size: 1.1rem;
     color: var(--text-secondary);
     line-height: 1.65;
-    max-width: 620px;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 520px;
+    margin-bottom: 0;
   }
 
   /* ─── CTA Buttons ─── */
   .hero-actions {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
   }
 
   .hero-btn-primary {
-    padding: 0.85rem 2rem;
+    padding: 0.9rem 2rem;
     font-size: 0.95rem;
+    gap: 0.5rem;
+  }
+
+  .hero-btn-primary svg {
+    transition: transform var(--transition-fast);
+  }
+
+  .hero-btn-primary:hover svg {
+    transform: translateX(3px);
   }
 
   .hero-btn-secondary {
@@ -240,271 +336,411 @@
     transform: translateX(4px);
   }
 
-  /* ─── Pipeline Card Wrapper ─── */
-  .pipeline-wrapper {
-    width: 100%;
-    margin-top: 4rem;
+  /* ─── Metrics Strip ─── */
+  .hero-metrics {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
   }
 
-  .pipeline-card {
-    max-width: 680px;
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .metric-value {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .metric-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .metric-divider {
+    width: 1px;
+    height: 28px;
+    background-color: var(--border-color);
+  }
+
+  /* ═══ RIGHT COLUMN — PRODUCT VISUAL ═══ */
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-visual-wrapper {
+    position: relative;
     width: 100%;
-    background-color: var(--bg-secondary);
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ─── Floating Code Card ─── */
+  .floating-code-card {
+    position: absolute;
+    top: -24px;
+    left: -40px;
+    z-index: 10;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0;
+    box-shadow: var(--shadow-lg);
+    font-size: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px) rotate(-2deg);
+    animation: floatIn 0.6s ease-out 1.2s forwards;
+  }
+
+  .floating-code-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+
+  .fc-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--success);
+  }
+
+  .floating-code-card code {
+    display: block;
+    padding: 0.5rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--accent-dark);
+    white-space: nowrap;
+  }
+
+  /* ─── Floating RLS Badge ─── */
+  .floating-rls-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -30px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--success-light);
+    border-radius: var(--radius-full);
+    padding: 0.35rem 0.75rem;
+    box-shadow: var(--shadow-md);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--success);
+    opacity: 0;
+    transform: translateY(10px) rotate(1deg);
+    animation: floatIn 0.6s ease-out 1.8s forwards;
+  }
+
+  .floating-rls-badge svg {
+    color: var(--success);
+    flex-shrink: 0;
+  }
+
+  @keyframes floatIn {
+    to {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  /* ─── Main Chat Widget ─── */
+  .chat-widget-preview {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
     overflow: hidden;
-    position: relative;
-    text-align: left;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
-  /* ─── Terminal Top Bar ─── */
-  .pipeline-topbar {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    height: 40px;
-    padding: 0 1.25rem;
-    background-color: var(--bg-tertiary);
-    border-bottom: 1px solid var(--border-color);
+  :global(html.dark) .chat-widget-preview {
+    box-shadow: var(--shadow-xl), 0 0 100px rgba(255, 87, 34, 0.04);
   }
 
-  .topbar-dots {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  .chat-widget-preview:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl), 0 20px 40px rgba(0, 0, 0, 0.08);
   }
 
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: var(--radius-full);
+  :global(html.dark) .chat-widget-preview:hover {
+    box-shadow: var(--shadow-xl), 0 0 120px rgba(255, 87, 34, 0.06), 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 
-  .dot-red {
-    background-color: var(--border-color);
-  }
-
-  .dot-yellow {
-    background-color: var(--border-color);
-  }
-
-  .dot-green {
-    background-color: var(--border-color);
-  }
-
-  .pipeline-title {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-  }
-
-  /* ─── Pipeline Body ─── */
-  .pipeline-body {
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* ─── Step Panel ─── */
-  .step-panel {
-    display: flex;
-    gap: 1.25rem;
-  }
-
-  .step-num {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    min-width: 22px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-
-  .step-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
-  }
-
-  .step-header-row {
+  /* Widget Header */
+  .widget-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-tertiary);
   }
 
-  .step-content h4 {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0;
-    letter-spacing: -0.01em;
+  .widget-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
   }
 
-  .status-indicator {
-    font-size: 0.675rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .widget-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
   }
 
-  .status-indicator.success {
-    color: var(--success);
-  }
-
-  .status-indicator.live {
-    color: var(--accent);
-  }
-
-  .step-description {
-    font-size: 0.775rem;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
-    line-height: 1.45;
-  }
-
-  /* ─── Step Connector ─── */
-  .step-connector {
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    height: 28px;
-  }
-
-  .connector-line {
-    width: 1px;
-    height: 100%;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      var(--text-light) 0px,
-      var(--text-light) 3px,
-      transparent 3px,
-      transparent 7px
-    );
-  }
-
-  /* ─── Step Visual (shared) ─── */
-  .step-visual {
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    padding: 0.5rem 0.75rem;
-  }
-
-  /* Step 1: File Upload Visual */
-  .visual-file-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.7rem;
-    color: var(--text-primary);
-  }
-
-  .visual-file-item svg {
-    color: var(--text-muted);
-    flex-shrink: 0;
-  }
-
-  .filename {
-    font-weight: 600;
-  }
-
-  .file-size {
-    color: var(--text-light);
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-  }
-
-  .file-progress-bar {
-    flex-grow: 1;
-    height: 3px;
-    background-color: var(--border-color);
-    border-radius: var(--radius-full);
-    overflow: hidden;
-    margin: 0 0.25rem;
-    min-width: 40px;
-  }
-
-  .file-progress-bar .fill {
-    width: 100%;
-    height: 100%;
-    background-color: var(--success);
-    border-radius: var(--radius-full);
-  }
-
-  .percentage {
-    font-family: var(--font-mono);
+  .widget-title {
+    font-size: 0.825rem;
     font-weight: 700;
-    font-size: 0.65rem;
-    color: var(--success);
+    color: var(--text-primary);
+    line-height: 1.2;
   }
 
-  /* Step 2: RLS Badge Visual */
-  .db-status-pill {
+  .widget-status {
+    font-size: 0.65rem;
+    color: var(--success);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.7rem;
-    color: var(--text-primary);
+    gap: 4px;
     font-weight: 500;
   }
 
-  .db-status-pill svg {
-    color: var(--success);
-    flex-shrink: 0;
+  .widget-status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--success);
+    animation: dot-pulse 2s infinite;
   }
 
-  /* Step 3: Code Snippet Visual */
-  .step-visual.script-visual {
-    padding: 0;
+  .widget-header-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .widget-header-dots span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text-light);
+  }
+
+  /* Chat Body */
+  .widget-chat-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 300px;
+    max-height: 340px;
     overflow: hidden;
   }
 
-  .code-header {
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    font-weight: 700;
-    padding: 0.35rem 0.75rem;
-    color: var(--text-muted);
-    letter-spacing: 0.06em;
+  .widget-msg {
+    display: flex;
+    flex-direction: column;
+    max-width: 88%;
   }
 
-  .code-body {
-    padding: 0.625rem 0.75rem;
+  .widget-msg-user {
+    align-self: flex-end;
+  }
+
+  .widget-msg-bot {
+    align-self: flex-start;
+  }
+
+  .widget-msg-bubble {
+    padding: 0.7rem 0.9rem;
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  .user-bubble {
+    background: var(--accent);
+    color: #ffffff;
+    border-bottom-right-radius: 2px;
+  }
+
+  .bot-bubble {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 2px;
+  }
+
+  .bot-bubble code {
+    background: var(--bg-tertiary);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent-dark);
+  }
+
+  .widget-code-block {
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-primary);
     overflow-x: auto;
   }
 
-  .code-body code {
-    font-family: var(--font-mono);
-    font-size: 0.625rem;
-    color: var(--accent-dark);
-    white-space: nowrap;
-    line-height: 1.5;
+  /* Citation Badge */
+  .widget-citation {
+    margin-top: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.68rem;
+    color: var(--success);
+    font-weight: 500;
   }
 
-  /* ─── Responsive: 768px ─── */
-  @media (max-width: 768px) {
-    .hero-section {
-      padding-top: 7rem;
-      padding-bottom: 3.5rem;
+  .widget-citation svg {
+    flex-shrink: 0;
+    color: var(--success);
+  }
+
+  .widget-citation strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  /* Widget Input Bar */
+  .widget-input-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-tertiary);
+  }
+
+  .widget-input-placeholder {
+    font-size: 0.775rem;
+    color: var(--text-light);
+    font-weight: 400;
+  }
+
+  .widget-send-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-md);
+    background: var(--accent);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ─── Message Entrance Animations ─── */
+  .widget-msg-animate {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .widget-msg-animate.msg-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ═══ RESPONSIVE ═══ */
+
+  @media (max-width: 968px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      text-align: center;
+    }
+
+    .hero-left {
+      align-items: center;
+      text-align: center;
     }
 
     .hero-headline {
-      font-size: 2.75rem;
+      font-size: 3rem;
+    }
+
+    .hero-subheadline {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-metrics {
+      justify-content: center;
+    }
+
+    .hero-visual-wrapper {
+      max-width: 400px;
+    }
+
+    .floating-code-card {
+      left: -10px;
+      top: -16px;
+    }
+
+    .floating-rls-badge {
+      left: -10px;
+      bottom: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding-top: 7.5rem;
+      padding-bottom: 4rem;
+      min-height: auto;
+    }
+
+    .hero-headline {
+      font-size: 2.5rem;
     }
 
     .hero-subheadline {
@@ -516,6 +752,7 @@
       align-items: stretch;
       width: 100%;
       max-width: 340px;
+      margin: 0 auto;
     }
 
     .hero-btn-primary,
@@ -525,61 +762,95 @@
       text-align: center;
     }
 
-    .pipeline-wrapper {
-      margin-top: 3rem;
+    .hero-metrics {
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .pipeline-body {
-      padding: 1.25rem;
+    .metric-divider {
+      display: none;
     }
 
-    .step-panel {
-      gap: 0.75rem;
+    .floating-code-card,
+    .floating-rls-badge {
+      display: none;
+    }
+
+    .widget-chat-body {
+      min-height: 260px;
+      max-height: 280px;
     }
   }
 
-  /* ─── Responsive: 640px ─── */
-  @media (max-width: 640px) {
+  @media (max-width: 480px) {
     .hero-section {
-      padding-top: 6rem;
+      padding-top: 6.5rem;
       padding-bottom: 3rem;
     }
 
     .hero-headline {
-      font-size: 2.25rem;
-      letter-spacing: -0.04em;
+      font-size: 2.1rem;
     }
 
-    .hero-subheadline {
-      font-size: 0.95rem;
+    .hero-metrics {
+      gap: 0.75rem;
     }
 
-    .hero-content {
-      gap: 1.25rem;
+    .metric-value {
+      font-size: 0.8rem;
     }
 
-    .pipeline-body {
-      padding: 1rem;
+    .metric-label {
+      font-size: 0.625rem;
     }
+  }
 
-    .step-header-row {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
+  /* ─── Reduced Motion ─── */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-gradient-orb {
+      animation: none !important;
     }
-
-    .visual-file-item {
-      flex-wrap: wrap;
+    .floating-code-card,
+    .floating-rls-badge {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
     }
-
-    .file-progress-bar {
-      order: 5;
-      flex-basis: 100%;
-      margin: 0.25rem 0 0 0;
-    }
-
-    .percentage {
-      order: 4;
+    .widget-msg-animate {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Trigger highlight underline animation
+    const highlightEl = document.querySelector('.hero-headline .highlight-underline');
+    if (highlightEl) {
+      setTimeout(() => highlightEl.classList.add('animate'), 800);
+    }
+
+    // Animate chat messages sequentially when widget enters viewport
+    const widget = document.getElementById('heroWidget');
+    const messages = document.querySelectorAll('.widget-msg-animate');
+
+    if (widget && messages.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            messages.forEach((msg, index) => {
+              setTimeout(() => {
+                msg.classList.add('msg-visible');
+              }, 400 + (index * 500)); // 400ms initial delay, 500ms between each
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(widget);
+    }
+  });
+</script>

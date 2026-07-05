@@ -5,7 +5,6 @@ import Hero from '../components/Hero.astro';
 import Sandbox from '../components/Sandbox.tsx';
 import Workflow from '../components/Workflow.astro';
 import Security from '../components/Security.astro';
-import Pricing from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
@@ -16,19 +15,18 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <main>
-    <!-- Hero Header Component -->
     <Hero />
     
-
     
     <!-- Sandbox Section (React Island) -->
     <section class="section sandbox-section-wrapper" id="sandbox-section">
+      <div class="ambient-glow ambient-glow-sandbox" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header fade-up-init">
-          <span class="badge">Interactive Trial</span>
-          <h2>Experience the Zero-Hallucination Engine</h2>
+          <span class="badge">Interactive Demo</span>
+          <h2>Try It Now - Zero Setup Required</h2>
           <p class="section-desc">
-            Test our chatbot in real-time. Select a source document from the knowledge base, click one of the suggested questions, or type your own to see citation-grounded RAG in action.
+            Ask questions, test the citation engine, and see hallucination rejection in real-time. No sign-up needed.
           </p>
         </div>
         
@@ -36,6 +34,13 @@ import Footer from '../components/Footer.astro';
           <!-- Hydrate React Sandbox Component Client-side -->
           <Sandbox client:load />
         </div>
+        
+        <p class="sandbox-note fade-up-init delay-200">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          This is a live demo using pre-indexed documents. Your data stays private with PostgreSQL RLS.
+        </p>
       </div>
     </section>
 
@@ -45,8 +50,6 @@ import Footer from '../components/Footer.astro';
     <!-- Security, Isolation, Hybrid Search -->
     <Security />
 
-    <!-- Plan Pricing Cards -->
-    <Pricing />
 
     <!-- FAQ Accordion Section -->
     <FAQ />
@@ -64,9 +67,32 @@ import Footer from '../components/Footer.astro';
 
   /* Sandbox Wrapper Section */
   .sandbox-section-wrapper {
+    position: relative;
     background-color: var(--bg-primary);
     padding: 7.5rem 0;
     border-bottom: 1px solid var(--border-color);
+  }
+
+  .ambient-glow-sandbox {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+    opacity: 0.4;
+    background: radial-gradient(ellipse at center, var(--accent-glow-strong) 0%, transparent 70%);
+  }
+
+  .sandbox-note {
+    text-align: center;
+    font-size: 0.775rem;
+    color: var(--text-light);
+    margin-top: 1.5rem;
   }
 
   .section-header {

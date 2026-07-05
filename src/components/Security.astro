@@ -2,6 +2,7 @@
 ---
 
 <section class="security-section" id="security">
+  <div class="ambient-glow ambient-glow-security" aria-hidden="true"></div>
   <div class="container security-container">
 
     <!-- Left Column: Content -->
@@ -175,6 +176,20 @@
     border-bottom: 1px solid var(--border-color);
   }
 
+  .ambient-glow-security {
+    position: absolute;
+    width: 500px;
+    height: 350px;
+    top: 20%;
+    right: -5%;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+    opacity: 0.35;
+    background: radial-gradient(ellipse at center, var(--success-light) 0%, transparent 70%);
+  }
+
   .security-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -221,9 +236,9 @@
   }
 
   .pillar-bullet {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     border-radius: var(--radius-sm);
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
@@ -375,14 +390,18 @@
   .node-rls {
     width: 100%;
     background: var(--bg-primary);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--success-light);
     padding: 1rem 1.25rem;
     align-items: flex-start;
     text-align: left;
   }
 
   .node-rls:hover {
-    border-color: var(--border-hover);
+    border-color: var(--success);
+  }
+
+  .node-rls .gate-header svg {
+    color: var(--success);
   }
 
   .gate-header {
@@ -453,8 +472,8 @@
   }
 
   .ns-blocked {
-    opacity: 0.6;
-    border-color: var(--border-color);
+    opacity: 0.75;
+    border-color: var(--error-light);
   }
 
   .db-title-bar {
@@ -597,6 +616,22 @@
     .node-rls pre {
       font-size: 0.6rem;
       overflow-x: auto;
+    }
+  }
+
+  .flow-arrow.horizontal svg line,
+  .flow-arrow.vertical svg line {
+    animation: dashFlow 3s linear infinite;
+  }
+  @keyframes dashFlow {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -24; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flow-arrow.horizontal svg line,
+    .flow-arrow.vertical svg line {
+      animation: none !important;
     }
   }
 </style>
