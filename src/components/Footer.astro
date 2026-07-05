@@ -2,69 +2,33 @@
 ---
 
 <footer class="footer">
-  <div class="container">
+  <div class="container footer-container">
     
-    <div class="footer-grid">
-      <!-- Brand column -->
-      <div class="footer-brand-col">
-        <a href="#" class="footer-logo">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 17L12 22L22 17" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 12L12 17L22 12" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>botforweb</span>
-        </a>
-        <p class="footer-description">
-          Secure, multi-tenant Documentation Chatbot SaaS. Zero-hallucination answers grounded strictly in your files.
-        </p>
-        <div class="status-indicator">
-          <span class="status-dot"></span>
-          <span>All systems operational</span>
-        </div>
-      </div>
-
-      <!-- Links Columns -->
-      <div class="footer-links-col">
-        <h4>Product</h4>
-        <ul>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#security">Security</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-links-col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="#docs">API Docs</a></li>
-          <li><a href="#guides">Ingestion Guide</a></li>
-          <li><a href="#changelog">Changelog</a></li>
-          <li><a href="#status">System Status</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-links-col">
-        <h4>Security & Legal</h4>
-        <ul>
-          <li><a href="#security-center">Security Center</a></li>
-          <li><a href="#privacy">Privacy Policy</a></li>
-          <li><a href="#terms">Terms of Service</a></li>
-          <li><a href="#subprocessors">Subprocessors</a></li>
-        </ul>
-      </div>
+    <div class="footer-left">
+      <a href="#" class="footer-logo">
+        <span class="footer-logo-mark"></span>
+        <span>botforweb</span>
+      </a>
+      <span class="footer-divider">|</span>
+      <p class="footer-copyright">&copy; {new Date().getFullYear()} botforweb. All rights reserved.</p>
     </div>
 
-    <!-- Footer Bottom border -->
-    <div class="footer-bottom">
-      <p>&copy; {new Date().getFullYear()} botforweb. All rights reserved.</p>
+    <div class="footer-right">
+      <nav class="footer-nav">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#security">Security</a>
+      </nav>
+      <span class="footer-divider">|</span>
       <div class="social-links">
         <a href="#github" aria-label="Github">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         </a>
         <a href="#twitter" aria-label="Twitter">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/botforweb" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
     </div>
@@ -76,24 +40,24 @@
   .footer {
     background-color: var(--bg-primary);
     border-top: 1px solid var(--border-color);
-    padding: 6rem 0 3rem 0;
+    padding: 1.5rem 0;
     color: var(--text-secondary);
     position: relative;
     z-index: 10;
   }
 
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr repeat(3, 1fr);
-    gap: 4rem;
-    margin-bottom: 4rem;
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
   }
 
-  .footer-brand-col {
+  .footer-left,
+  .footer-right {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 1.25rem;
-    align-items: flex-start;
   }
 
   .footer-logo {
@@ -103,125 +67,82 @@
     color: var(--text-primary);
     font-family: var(--font-title);
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     letter-spacing: -0.02em;
   }
 
-  .footer-description {
-    font-size: 0.875rem;
+  .footer-logo-mark {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .footer-divider {
+    color: var(--border-color);
+    font-size: 0.85rem;
+    user-select: none;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
     color: var(--text-muted);
-    line-height: 1.55;
-    max-width: 300px;
     margin-bottom: 0;
   }
 
-  /* Status indicator widget */
-  .status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--success);
-    background-color: var(--success-soft);
-    border: 1px solid var(--success-light);
-    padding: 0.25rem 0.65rem;
-    border-radius: var(--radius-full);
-    letter-spacing: 0.02em;
-  }
-
-  .status-dot {
-    width: 6px;
-    height: 6px;
-    background-color: var(--success);
-    border-radius: var(--radius-full);
-    animation: statusPulse 2s infinite ease-in-out;
-  }
-
-  @keyframes statusPulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.4); opacity: 0.5; }
-  }
-
-  /* Links columns */
-  .footer-links-col h4 {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-primary);
-    margin-bottom: 1.25rem;
-  }
-
-  .footer-links-col ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .footer-links-col ul a {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    transition: color var(--transition-fast);
-  }
-
-  .footer-links-col ul a:hover {
-    color: var(--text-primary);
-  }
-
-  /* Footer Bottom */
-  .footer-bottom {
-    border-top: 1px solid var(--border-color);
-    padding-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-  }
-
-  .social-links {
+  /* Navigation Links */
+  .footer-nav {
     display: flex;
     gap: 1.25rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+    font-weight: 500;
+  }
+
+  .footer-nav a:hover {
+    color: var(--text-primary);
+  }
+
+  /* Social links */
+  .social-links {
+    display: flex;
+    gap: 1rem;
     color: var(--text-muted);
   }
 
   .social-links a {
-    transition: color var(--transition-fast), filter var(--transition-fast);
+    transition: color var(--transition-fast);
     display: flex;
     align-items: center;
   }
 
   .social-links a:hover {
     color: var(--text-primary);
-    filter: drop-shadow(0 0 4px var(--accent-glow));
   }
 
   /* Responsive styling */
-  @media (max-width: 968px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-    .footer-brand-col {
-      grid-column: span 2;
-    }
-  }
-
-  @media (max-width: 540px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .footer-brand-col {
-      grid-column: span 1;
-    }
-    .footer-bottom {
+  @media (max-width: 768px) {
+    .footer-container {
       flex-direction: column;
       gap: 1.25rem;
-      align-items: flex-start;
-      padding-top: 1.5rem;
+      align-items: center;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+
+    .footer-divider {
+      display: none;
+    }
+
+    .footer-left,
+    .footer-right {
+      flex-direction: column;
+      gap: 1rem;
     }
   }
 </style>

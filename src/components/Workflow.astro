@@ -13,7 +13,7 @@
     </div>
 
     <!-- Grid -->
-    <div class="grid-3 workflow-grid">
+    <div class="workflow-steps-grid">
       <!-- Step 1 -->
       <div class="workflow-card fade-up-init delay-100" id="step1Card">
         <div class="step-watermark">01</div>
@@ -112,14 +112,12 @@
     border-bottom: 1px solid var(--border-color);
   }
   /* ─── Grid ─── */
-  .workflow-grid {
+  .workflow-steps-grid {
     margin-top: 0;
-  }
-
-  @media (min-width: 769px) {
-    .workflow-grid {
-      grid-template-columns: repeat(3, 1fr) !important;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
   }
 
   /* ─── Card ─── */
@@ -322,12 +320,12 @@
   }
 
   /* ─── Responsive ─── */
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .workflow-section {
       padding: 5rem 0;
     }
 
-    .workflow-grid {
+    .workflow-steps-grid {
       grid-template-columns: 1fr;
     }
 

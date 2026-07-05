@@ -185,8 +185,8 @@ export default function Sandbox() {
           grid-template-columns: 340px 1fr;
           background-color: var(--bg-secondary);
           border: 1px solid var(--border-color);
-          border-radius: var(--radius-lg);
-          box-shadow: var(--shadow-xl), var(--shadow-glow);
+          border-radius: var(--radius-xl);
+          box-shadow: var(--shadow-xl);
           overflow: hidden;
           height: 580px;
           font-family: var(--font-sans);
@@ -194,7 +194,7 @@ export default function Sandbox() {
 
         /* Left side - files */
         .sandbox-files-pane {
-          background-color: var(--bg-tertiary);
+          background-color: var(--bg-secondary);
           border-right: 1px solid var(--border-color);
           display: flex;
           flex-direction: column;
@@ -231,25 +231,24 @@ export default function Sandbox() {
         }
 
         .sandbox-file-item {
-          background-color: var(--surface-card);
+          background-color: var(--bg-primary);
           border: 1px solid var(--border-color);
           border-radius: var(--radius-md);
           padding: 0.875rem;
           cursor: pointer;
           transition: all var(--transition-fast);
           text-align: left;
+          outline: none;
         }
 
         .sandbox-file-item:hover {
           border-color: var(--border-hover);
-          background-color: var(--surface-card-hover);
-          transform: translateY(-1px);
+          background-color: var(--bg-secondary);
         }
 
         .sandbox-file-item.selected {
           border-color: var(--accent);
-          box-shadow: 0 0 0 1px var(--accent-border);
-          background-color: var(--accent-soft);
+          background-color: var(--bg-primary);
         }
 
         .file-header-row {
@@ -277,7 +276,7 @@ export default function Sandbox() {
         .file-badge-type {
           font-size: 0.7rem;
           padding: 0.125rem 0.375rem;
-          background-color: rgba(255, 255, 255, 0.05);
+          background-color: var(--bg-tertiary);
           color: var(--text-secondary);
           border-radius: var(--radius-sm);
           font-weight: 500;
@@ -301,7 +300,7 @@ export default function Sandbox() {
         .sandbox-chat-pane {
           display: flex;
           flex-direction: column;
-          background-color: var(--bg-secondary);
+          background-color: var(--bg-primary);
           overflow: hidden;
         }
 
@@ -324,14 +323,13 @@ export default function Sandbox() {
           width: 36px;
           height: 36px;
           border-radius: var(--radius-full);
-          background-color: var(--accent);
-          color: #ffffff;
+          background-color: var(--text-primary);
+          color: var(--bg-primary);
           font-weight: 700;
           font-size: 0.85rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: var(--shadow-accent);
         }
 
         .chat-title-group h4 {
@@ -395,7 +393,6 @@ export default function Sandbox() {
           background-color: var(--accent);
           color: #ffffff;
           border-bottom-right-radius: 2px;
-          box-shadow: var(--shadow-accent-strong);
         }
 
         .chat-msg-row.bot .chat-bubble-content {
@@ -403,7 +400,6 @@ export default function Sandbox() {
           color: var(--text-primary);
           border: 1px solid var(--border-color);
           border-bottom-left-radius: 2px;
-          box-shadow: var(--shadow-sm);
         }
 
         .chat-msg-row.bot code {
@@ -412,7 +408,7 @@ export default function Sandbox() {
           border-radius: 4px;
           font-family: var(--font-mono);
           font-size: 0.775rem;
-          color: var(--accent-dark); /* Rich vermillion for key terms */
+          color: var(--accent-dark);
         }
 
         .chat-msg-row.bot pre {
@@ -433,11 +429,11 @@ export default function Sandbox() {
         .citation-box {
           margin-top: 0.5rem;
           padding: 0.5rem 0.75rem;
-          border: 1px solid var(--accent-border);
-          background-color: var(--accent-soft);
-          border-radius: var(--radius-sm);
+          border: 1px solid var(--border-color);
+          background-color: var(--bg-tertiary);
+          border-radius: var(--radius-md);
           font-size: 0.75rem;
-          color: var(--accent);
+          color: var(--text-secondary);
           display: flex;
           align-items: center;
           gap: 0.375rem;
@@ -445,7 +441,7 @@ export default function Sandbox() {
 
         .citation-box.fallback {
           border-color: rgba(239, 68, 68, 0.2);
-          background-color: rgba(239, 68, 68, 0.06);
+          background-color: rgba(239, 68, 68, 0.04);
           color: var(--error);
         }
 
@@ -477,11 +473,6 @@ export default function Sandbox() {
           40% { transform: scale(1); }
         }
 
-        @keyframes dot-pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
-        }
-
         /* Suggestions row */
         .chat-suggestions-area {
           padding: 0.75rem 1.5rem;
@@ -493,9 +484,9 @@ export default function Sandbox() {
         }
 
         .suggestion-chip {
-          background-color: var(--surface-card);
+          background-color: var(--bg-primary);
           border: 1px solid var(--border-color);
-          border-radius: var(--radius-full);
+          border-radius: var(--radius-md);
           padding: 0.4rem 0.85rem;
           font-size: 0.775rem;
           font-weight: 500;
@@ -504,13 +495,13 @@ export default function Sandbox() {
           transition: all var(--transition-fast);
           white-space: nowrap;
           text-align: left;
+          outline: none;
         }
 
         .suggestion-chip:hover {
-          border-color: var(--accent);
+          border-color: var(--text-primary);
           color: var(--text-primary);
-          background-color: var(--accent-soft);
-          transform: translateY(-0.5px);
+          background-color: var(--overlay-hover);
         }
 
         /* Form Footer */
@@ -535,8 +526,7 @@ export default function Sandbox() {
         }
 
         .chat-text-input:focus {
-          border-color: var(--accent);
-          box-shadow: 0 0 0 2px var(--accent-glow);
+          border-color: var(--text-primary);
         }
 
         .chat-send-btn {
@@ -558,26 +548,54 @@ export default function Sandbox() {
         }
 
         .chat-send-btn:disabled {
-          background-color: var(--surface-card);
+          background-color: var(--bg-tertiary);
           color: var(--text-muted);
           cursor: not-allowed;
         }
 
-        /* Responsive */
+        /* Mobile Responsive Viewport Redesign */
         @media (max-width: 820px) {
           .sandbox-panel-container {
             grid-template-columns: 1fr;
-            height: auto;
+            height: 680px;
           }
 
           .sandbox-files-pane {
-            height: 220px;
+            height: auto;
             border-right: none;
             border-bottom: 1px solid var(--border-color);
           }
 
+          .pane-title-area {
+            padding: 1rem;
+          }
+
+          .files-list {
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.75rem 1rem;
+            gap: 0.5rem;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .sandbox-file-item {
+            flex: 0 0 240px;
+            padding: 0.75rem;
+            margin-bottom: 0;
+          }
+
+          .file-desc-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
           .sandbox-chat-pane {
-            height: 420px;
+            flex-grow: 1;
+            height: 440px;
           }
         }
       ` }} />
